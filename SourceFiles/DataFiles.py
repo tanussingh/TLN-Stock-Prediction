@@ -1,6 +1,6 @@
-#	By: Tanushri Singh
-#   Teammates:- Nickolas, Lawrence
-#   CS 6375 - Machine Learning
+#       By: Tanushri Singh
+#       Teammates:- Nickolas, Lawrence
+#       CS 6375 - Machine Learning
 #  	Instructor: Anjum Chida
 
 ###################
