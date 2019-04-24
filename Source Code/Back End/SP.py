@@ -1,3 +1,4 @@
+#Import Libraries
 import tweepy
 import numpy as np
 import requests
@@ -5,19 +6,26 @@ import json
 import matplotlib.pyplot as plt
 from textblob import TextBlob
 from sklearn.svm import SVR
+
 plt.switch_backend('TkAgg')
+#Set up keys
 consumer_key= 'Enter your consumer key from twitter'
 consumer_secret= 'Enter your consumer secret from twitter'
 access_token='Enter your access token from twitter'
 access_token_secret='Enter your access token secret from twitter'
+
+#Set up twitter
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 public_tweets = api.search('Google')
 
+#Initialize values
 threshold=0
 pos_sent_tweet=0
 neg_sent_tweet=0
+
+#Analyze tweets
 for tweet in public_tweets:
     analysis=TextBlob(tweet.text)
     if analysis.sentiment.polarity >= threshold:
@@ -25,9 +33,9 @@ for tweet in public_tweets:
     else:
         neg_sent_tweet=neg_sent_tweet+1
 if pos_sent_tweet>neg_sent_tweet:
-    print ("Overall Pos")
+    print ("Overall Positive")
 else:
-    print ("Overall Neg")
+    print ("Overall Negative")
 
 
 # given a date in the format YYYY-MM-DD,
@@ -39,7 +47,7 @@ def date_to_int(date):
 
     return (year - 1) * 366 + (month - 1) * 31 + day
 
-
+# Predict prices of stocks
 def predict_prices(symbol, date):
     dates = []
     prices = []
