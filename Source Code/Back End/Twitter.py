@@ -1,3 +1,4 @@
+#Import libraries
 import tweepy
 import json
 from textblob import TextBlob
@@ -9,22 +10,21 @@ consumer_secret= 'Enter your consumer secret from twitter'
 access_token='Enter your access token from twitter'
 access_token_secret='Enter your access token secret from twitter'
 
-# This is a basic listener that just prints received tweets to stdout.
+# basic listener that prints received tweets to stdout.
 class StdOutListener(StreamListener):
     def on_data(self, data):
         tweet = json.loads(data)
         for url in tweet["entities"]["urls"]:
             print (" - found URL: %s" % url["expanded_url"])
         return True
-
     def on_error(self, status):
         print (status)
 
 
-# Given a string query, searches Twitter for Tweets containing that word
+# Given a string query, search Twitter for Tweets containing word
 # and returns overall sentiment and a tweet that contains the query
 def search_twitter(query):
-    # This handles Twitter authentification
+    # handling Twitter authentification
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
 
