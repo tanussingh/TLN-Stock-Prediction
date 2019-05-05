@@ -1,16 +1,21 @@
-# TLN Stock Predictor
-Overview of the project:- The team implemented a website, using Vue. The website prompts them with options for various possible stock predictions. The user specifies the date and company they would like the stock prediction for, then the backend takes this information to go forth and calculate the stock value for that given day. All stock predictions are made by accessing data stored on Alpha Vantage and by accessing recent tweets that are being posted about a company whether they are primarily positive or negative. This is relayed back to the front end and displayed to the user. 
+# stock-prediction
 
-Project for CS 6375 (Spring19) at The University of Texas at Dallas. 
+> Stock predictor
 
-## Project team: 
-* Tanushri Singh (TTS150030)
-* Lawrence Evangelista (LCE160130)
-* Nickolas Ramos (NOR140030)
+## Build Setup
 
-## Installation
-Ensure that Python is installed.
-In order to run this project you need to install the following libraries: numpy, scikit-learn, tweepy, textblob, matplotlib
+``` bash
+# install dependencies
+npm install
 
-## Running
---Directions--
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
