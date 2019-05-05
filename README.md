@@ -10,17 +10,17 @@ Project for CS 6375 (Spring19) at The University of Texas at Dallas.
 
 ## Installation
 Ensure that Python, npm, and flask is installed.
-In order to run this project you need to install the following libraries: numpy, scikit-learn, tweepy, textblob, matplotlib
+In order to run this project you need to install the following libraries: numpy, scikit-learn, tweepy, textblob, matplotlib. The following build setup was done through a linux terminal. 
 
 ## Build Setup
 
-For the setup, download the zip and navigate to the Front End/ folder, and run the following command:
+For the setup, download the zip and navigate into the Front End/ folder, and run the following command:
 
 ``` bash
 # install dependencies
 npm install
 ```
-Once all the files are dependencies are built, you can build the template via:
+Once all the dependencies are built, you can build the template via:
 ``` bash
 # build for production with minification
 npm run build
@@ -31,10 +31,8 @@ Once the template is built, navigate to the folder that contains the 'r' file, a
 # run the file
 ./r
 ```
-
 This will run the flask server and it will instruct you to navigate to an address in your browser.
 Have fun!
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 ## Running
---Directions--
