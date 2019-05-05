@@ -35,4 +35,3 @@ This will run the flask server and it will instruct you to navigate to an addres
 Have fun!
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-## Running
