@@ -2,9 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import VueGoogleCharts from 'vue-google-charts'
 import router from './router'
 
 Vue.config.productionTip = false
+Vue.use(VueGoogleCharts)
 
 /* eslint-disable no-new */
 new Vue({
