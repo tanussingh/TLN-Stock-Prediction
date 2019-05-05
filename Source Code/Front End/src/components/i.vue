@@ -30,7 +30,7 @@
 
       <br>
       <div>
-        <button v-on:click="getPrediction" class="btn">Submit</button>
+        <button v-on:click="getPrediction(selected, selected1)" class="btn">Submit</button>
         <p>Prediction: {{ prediction }}</p>
       </div>
 
@@ -67,7 +67,7 @@ export default {
     return {
       selected: null,
       selected1: null,
-      prediction: 1,
+      prediction: null,
       companys: [
         { value: null, text: 'Please select an option' },
         { value: 'AAPL', text: 'Apple' },
@@ -79,19 +79,31 @@ export default {
       ],
       days: [
         { value: null, text: 'Please select a day' },
-        { value: '1', text: '1' },
-        { value: '2', text: '2' },
-        { value: '3', text: '3' },
-        { value: '4', text: '4' },
-        { value: '5', text: '5' },
-        { value: '6', text: '6' },
-        { value: '7', text: '7' }
+        { value: 1, text: '1' },
+        { value: 2, text: '2' },
+        { value: 3, text: '3' },
+        { value: 4, text: '4' },
+        { value: 5, text: '5' },
+        { value: 6, text: '6' },
+        { value: 7, text: '7' }
       ]
     }
   },
   methods: {
-    getPrediction () {
-      const path = 'http://localhost:5000/predict/AAPL/2019-05-05'
+    leadingZero (n) {
+      return n < 10 ? '0' + n : n
+    },
+    getPrediction (stock, inc) {
+      alert(stock)
+      var datetime = new Date()
+      var month = datetime.getMonth()
+      var day = datetime.getDate()
+      month = month + 1
+      month = month < 10 ? '0' + month : month
+      day = day + inc
+      day = day < 10 ? '0' + day : day
+      var dateForm = datetime.getFullYear() + '-' + month + '-' + day
+      const path = 'http://localhost:5000/predict/' + stock + '/' + dateForm
       axios.get(path)
         .then(response => {
           this.prediction = response.data
